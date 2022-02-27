@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+selenium
+pyrogram
+pickledb
+tgcrypto
+lxml
