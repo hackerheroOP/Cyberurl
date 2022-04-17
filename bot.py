@@ -203,7 +203,7 @@ def balance(bot, message):
     time.sleep(3)
     passeword = driver.find_element_by_xpath('//*[@id="password"]').send_keys(passwd)
     time.sleep(3)
-    sign = driver.find_element_by_xpath('//*[@id="invisibleCaptchaSignin"]').click()
+    sign = driver.find_element_by_xpath("//button[@id='invisibleCaptchaSignin']").click()
     name = driver.find_element_by_xpath("//p[@class='name']").text
     referral = driver.find_element_by_xpath("//span[normalize-space()='Referrals']").click()
     referrallink = driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/section[1]/div[3]/div[1]/pre[1]").text
