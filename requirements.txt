@@ -1,7 +1,7 @@
 requests
 beautifulsoup4
 selenium
-pyrogram
+pyrogram==1.2.5
 pickledb
 tgcrypto
 lxml
