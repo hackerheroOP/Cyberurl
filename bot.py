@@ -153,16 +153,16 @@ def balance(bot, message):
     sign = driver.find_element("xpath",'//*[@id="invisibleCaptchaSignin"]').click()
     time.sleep(5)
     # balance = driver.find_element("xpath",'/html/body/div[1]/div[1]/section/div[3]/div[2]/div/div/div/div[1]/span').text()
-    view = driver.find_element("xpath","/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]").text
+    view = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]").text
     view2 = view.replace(" ","")
     balance = driver.find_element("xpath",'/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]').text
-    name = driver.find_element("xpath","//p[@class='name']").text 
-    date = driver.find_element("xpath","//div[4]//div[1]//div[1]//div[1]//p[1]//span[2]").text
-    avg_cpm = driver.find_element("xpath","//div[4]//div[4]//div[1]//div[1]//div[1]//div[1]//span[1]").text
-    ref_earn = driver.find_element("xpath","/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[1]/span[1]").text
-    tbalance = driver.find_element("xpath","//span[n"xpath",ormalize-space()='Payments']").click()
+    name = driver.find_element('xpath',"//p[@class='name']").text 
+    date = driver.find_element('xpath',"//div[4]//div[1]//div[1]//div[1]//p[1]//span[2]").text
+    avg_cpm = driver.find_element('xpath',"//div[4]//div[4]//div[1]//div[1]//div[1]//div[1]//span[1]").text
+    ref_earn = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[1]/span[1]").text
+    tbalance = driver.find_element('xpath',"//span[n"xpath",ormalize-space()='Payments']").click()
     time.sleep(3)
-    total_balance = driver.find_element("xpath","/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/h6[1]").text
+    total_balance = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/h6[1]").text
     msg = f"**😎Username:** {name}\n**🗓Date:** {date}\n\n**📊Your Today's Statistic\n\n**👀 Views:** {view2}\n**💰Earnings:** {balance}\n**👬REF Earn:** {ref_earn}\n**💲Avg CPM:** {avg_cpm}\n\n**🤑 Total Available Balance :** {total_balance}"
     driver.close()
     fetch.delete()
@@ -203,10 +203,10 @@ def balance(bot, message):
     time.sleep(3)
     passeword = driver.find_element("xpath",'//*[@id="password"]').send_keys(passwd)
     time.sleep(3)
-    sign = driver.find_element("xpath","//button[@id='invisibleCaptchaSignin']").click()
-    name = driver.find_element("xpath","//p[@class='name']").text
-    referral = driver.find_element("xpath","//span[normalize-space()='Referrals']").click()
-    referrallink = driver.find_element("xpath","/html[1]/body[1]/div[1]/div[1]/section[1]/div[3]/div[1]/pre[1]").text
+    sign = driver.find_element('xpath',"//button[@id='invisibleCaptchaSignin']").click()
+    name = driver.find_element('xpath',"//p[@class='name']").text
+    referral = driver.find_element('xpath',"//span[normalize-space()='Referrals']").click()
+    referrallink = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[3]/div[1]/pre[1]").text
     print(referrallink)
     msg = f"**😎 Username :** {name}\n\n**🎊 Your Referral Link Is 👇**\n```➡️ {referrallink}``` (Tap To Copy)"
     driver.close()
