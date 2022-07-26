@@ -1,6 +1,6 @@
 requests
 beautifulsoup4
-selenium
+selenium==3.14.0
 pyrogram==1.2.5
 pickledb
 tgcrypto
