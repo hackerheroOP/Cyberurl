@@ -30,7 +30,7 @@ db4 = pickledb.load("password.db", True)
 bot = Client('linkshortiify',
              api_id=5363773,
              api_hash="0433df559c3256e881f48a19171a80b8",
-             bot_token='5029137284:AAFnF3Q5s830mQN16Xw3ebcdNR8J_pK-co8',
+             bot_token='5029137284:AAE2eNEMQnPi3EhAu8VfuxFx9nxUT-GKGFg',
              workers=50,
              sleep_threshold=10)
 
