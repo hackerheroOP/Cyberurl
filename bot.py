@@ -155,7 +155,7 @@ def balance(bot, message):
     time.sleep(3)
     sign = driver.find_element("xpath","""//button[@id='invisibleCaptchaSignin']""")
     actions = Actions(driver);
-    actions.moveToElement(si)gn.click().perform();
+    actions.moveToElement(sign).click().perform();
 #     sign.click()
     time.sleep(5)
     # balance = driver.find_element("xpath",'/html/body/div[1]/div[1]/section/div[3]/div[2]/div/div/div/div[1]/span').text()
