@@ -140,7 +140,7 @@ def balance(bot, message):
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-dev-shm-usage")
+#     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     fetch = message.reply_text("**🔍 Fetching Details....**\n**🚫 Don't Spam**", quote=True)
@@ -153,9 +153,9 @@ def balance(bot, message):
     passwd = db4.get(str(message.from_user.id))
     passeword = driver.find_element("xpath",'//*[@id="password"]').send_keys(passwd)
     time.sleep(3)
-    sign = driver.find_element("xpath","""//button[@id='invisibleCaptchaSignin']""")
-    driver.execute_script("arguments[0].scrollIntoView();", sign)
-    driver.execute_script("arguments[0].click();", sign)
+    sign = driver.find_element("xpath","""//button[@id='invisibleCaptchaSignin']""").click()
+#     driver.execute_script("arguments[0].scrollIntoView();", sign)
+#     driver.execute_script("arguments[0].click();", sign)
 #     actions = Actions(driver);
 #     actions.moveToElement(sign).click().perform();
 #     sign.click()
