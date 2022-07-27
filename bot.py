@@ -153,7 +153,8 @@ def balance(bot, message):
     passwd = db4.get(str(message.from_user.id))
     passeword = driver.find_element("xpath",'//*[@id="password"]').send_keys(passwd)
     time.sleep(3)
-    sign = driver.find_element("xpath","""//button[@id='invisibleCaptchaSignin']""").click()
+#     sign = driver.find_element("xpath","""//button[@id='invisibleCaptchaSignin']""").click()
+    WebDriverWait(driver, 20).until(EC.element_to_be_clickable(("xpath","""//button[@id='invisibleCaptchaSignin']"""))).click()
 #     driver.execute_script("arguments[0].scrollIntoView();", sign)
 #     driver.execute_script("arguments[0].click();", sign)
 #     actions = Actions(driver);
