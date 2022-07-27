@@ -153,7 +153,7 @@ def balance(bot, message):
     passwd = db4.get(str(message.from_user.id))
     passeword = driver.find_element("xpath",'//*[@id="password"]').send_keys(passwd)
     time.sleep(3)
-    WebElement sign = driver.find_element("xpath","""//button[@id='invisibleCaptchaSignin']""")
+    sign = driver.find_element("xpath","""//button[@id='invisibleCaptchaSignin']""")
     Actions actions = new Actions(driver);
     actions.moveToElement(si)gn.click().perform();
 #     sign.click()
