@@ -199,14 +199,14 @@ def balance(bot, message):
     mail = db3.get(str(message.from_user.id))
     passwd = db4.get(str(message.from_user.id))
     driver.get(url)
-    username = driver.find_element_by_xpath('//*[@id="username"]').send_keys(mail)
+    username = driver.find_element("xpath",'//*[@id="username"]').send_keys(mail)
     time.sleep(3)
-    passeword = driver.find_element_by_xpath('//*[@id="password"]').send_keys(passwd)
+    passeword = driver.find_element("xpath",'//*[@id="password"]').send_keys(passwd)
     time.sleep(3)
-    sign = driver.find_element_by_xpath("//button[@id='invisibleCaptchaSignin']").click()
-    name = driver.find_element_by_xpath("//p[@class='name']").text
-    referral = driver.find_element_by_xpath("//span[normalize-space()='Referrals']").click()
-    referrallink = driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/section[1]/div[3]/div[1]/pre[1]").text
+    sign = driver.find_element('xpath',"//button[@id='invisibleCaptchaSignin']").click()
+    name = driver.find_element('xpath',"//p[@class='name']").text
+    referral = driver.find_element('xpath',"//span[normalize-space()='Referrals']").click()
+    referrallink = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[3]/div[1]/pre[1]").text
     print(referrallink)
     msg = f"**😎 Username :** {name}\n\n**🎊 Your Referral Link Is 👇**\n```➡️ {referrallink}``` (Tap To Copy)"
     driver.close()
