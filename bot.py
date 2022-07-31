@@ -213,7 +213,8 @@ def balance(bot, message):
     fetch.delete()
     message.reply_text(msg, quote=True)
     driver.quit()
-  except NoSuchElementException:
+  except NoSuchElementException as e:
+    print(e)
     fetch.delete()
 #     message.reply_text(f"**Please Add Mail & Password Before Using This Command!!**\n\n**(or)**\n\n**Invalid Email or Password**", quote=True) 
     message.reply(f"**Please Add Mail & Password Before Using This Command!!**\n\n**(or)**\n\n**Invalid Email or Password**\n\n Click On **Help** Button To Know", bot,
