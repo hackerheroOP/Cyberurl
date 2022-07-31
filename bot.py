@@ -153,23 +153,22 @@ def balance(bot, message):
     sign = driver.find_element("xpath",'//*[@id="invisibleCaptchaSignin"]').click()
     time.sleep(5)
     # balance = driver.find_element_by_xpath('/html/body/div[1]/div[1]/section/div[3]/div[2]/div/div/div/div[1]/span').text()
-    view = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]").text
+    view = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[3]/div[1]/div/div/div/div[1]/span").text
     view2 = view.replace(" ","")
-    balance = driver.find_element("xpath",'/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]').text
-    name = driver.find_element('xpath',"//p[@class='name']").text 
-    date = driver.find_element('xpath',"//div[4]//div[1]//div[1]//div[1]//p[1]//span[2]").text
-    avg_cpm = driver.find_element('xpath',"//div[4]//div[4]//div[1]//div[1]//div[1]//div[1]//span[1]").text
-    ref_earn = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[1]/span[1]").text
-    tbalance = driver.find_element('xpath',"//span[normalize-space()='Payments']").click()
+    balance = driver.find_element("xpath",'/html/body/div[1]/div[1]/section/div[3]/div[2]/div/div/div/div[1]/span').text
+    name = driver.find_element('xpath',"/html/body/div[1]/aside/section/li/a/div[2]/p").text 
+    date = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[3]/div[1]/div/div/p/span[2]").text
+    avg_cpm = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[3]/div[4]/div/div/div/div[1]/span").text
+    ref_earn = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[3]/div[3]/div/div/div/div[1]/span").text
+    tbalance = driver.find_element('xpath',"/html/body/div[1]/aside/section/ul/li[3]/a/span").click()
     time.sleep(3)
-    total_balance = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/h6[1]").text
+    total_balance = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[2]/div[1]/div/div/div/div/h6").text
     msg = f"**😎Username:** {name}\n**🗓Date:** {date}\n\n**📊Your Today's Statistic\n\n**👀 Views:** {view2}\n**💰Earnings:** {balance}\n**👬REF Earn:** {ref_earn}\n**💲Avg CPM:** {avg_cpm}\n\n**🤑 Total Available Balance :** {total_balance}"
     driver.close()
     fetch.delete()
     message.reply_text(msg, quote=True)
     driver.quit()
-  except NoSuchElementException as e:
-    print(e)
+  except NoSuchElementException:
     fetch.delete()
 #     message.reply_text(f"**Please Add Mail & Password Before Using This Command!!**\n\n**(or)**\n\n**Invalid Email or Password**", quote=True)
     message.reply(f"**Please Add Mail & Password Before Using This Command!!**\n\n**(or)**\n\n**Invalid Email or Password**\n\n Click On **Help** Button To Know", bot,
