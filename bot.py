@@ -206,7 +206,7 @@ def balance(bot, message):
     sign = driver.find_element('xpath',"//button[@id='invisibleCaptchaSignin']").click()
     name = driver.find_element('xpath',"//p[@class='name']").text
     referral = driver.find_element('xpath',"//span[normalize-space()='Referrals']").click()
-    referrallink = driver.find_element('xpath',"/html[1]/body[1]/div[1]/div[1]/section[1]/div[3]/div[1]/pre[1]").text
+    referrallink = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[2]/div/pre").text
     print(referrallink)
     msg = f"**😎 Username :** {name}\n\n**🎊 Your Referral Link Is 👇**\n```➡️ {referrallink}``` (Tap To Copy)"
     driver.close()
