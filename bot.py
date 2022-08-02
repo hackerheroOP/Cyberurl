@@ -46,10 +46,10 @@ def db_init():
     cur.execute(sql)
     print("TABLE INITIATED!")
 
-def user_id(name, id):
+def user_id(id):
     try:
-        sql = "INSERT INTO users_info(name, user_id) VALUES(%s, %s)"
-        cur.execute(sql,(name,id))
+        sql = "INSERT INTO users_info(user_id) VALUES(%s)"
+        cur.execute(sql,(id))
         mydb.commit()
     except mysql.connector.IntegrityError:
         e = ("User Already Exists")
@@ -110,7 +110,7 @@ image = "https://telegra.ph/file/624b37149a995536c0065.png"
 async def start(bot, message):
     name = message.chat.first_name
     userid = message.from_user.id
-    user_id(name,userid)
+    user_id(userid)
     text = Config.HOME_TEXT.format(message.chat.first_name, message.chat.id)
     reply_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Help', callback_data="help"),
