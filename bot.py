@@ -389,4 +389,6 @@ async def button(bot, cmd: CallbackQuery):
     
     )
         )
+db_init()
+print("Bot Started!")
 bot.run()
