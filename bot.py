@@ -26,7 +26,7 @@ import os
 
 # Vars
 url = "https://linkshortify.com/api?api="
-mydb = mysql.connector.connect(host="boa4orngixhmdxwy5he6-mysql.services.clever-cloud.com",user="ujebkp7eusutnaas",passwd="56b93MgaJ1sZXjv6bH5d",database="boa4orngixhmdxwy5he6")
+mydb = mysql.connector.connect(host="5.9.19.146",user="techlear_linkshortifybot",passwd="GUN07@gun07",database="techlear_linkshortifybot")
 cur = mydb.cursor(buffered=True)
 # db = pickledb.load("api.db", True)
 # db3 = pickledb.load("email.db", True)
