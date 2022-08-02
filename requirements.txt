@@ -5,3 +5,4 @@ pyrogram==1.2.5
 pickledb
 tgcrypto
 lxml
+mysql-connector-python
