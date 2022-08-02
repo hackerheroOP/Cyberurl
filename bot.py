@@ -229,13 +229,13 @@ def balance(bot, message):
     driver.get(login2)
     mail = get_email(userid)
     if "No Email" in mail:
-           await message.reply_text("**Please Add Email First**", quote=True)
+           message.reply_text("**Please Add Email First**", quote=True)
 #     mail = db3.get(str(message.from_user.id))
     username = driver.find_element("xpath",'//*[@id="username"]').send_keys(mail)
     time.sleep(3)
     passwd = get_password(userid)
     if "No Password" in passwd:
-          await message.reply_text("**Please Add Password First**", quote=True)
+          message.reply_text("**Please Add Password First**", quote=True)
 #     passwd = db4.get(str(message.from_user.id))
     passeword = driver.find_element("xpath",'//*[@id="password"]').send_keys(passwd)
     time.sleep(3)
@@ -287,12 +287,12 @@ def balance(bot, message):
     url = "https://linkshortify.com/auth/signin"
     mail = get_email(userid)
     if "No Email" in mail:
-           await message.reply_text("**Please Add Email First**", quote=True)
+           message.reply_text("**Please Add Email First**", quote=True)
     # driver = webdriver.Chrome()
 #     mail = db3.get(str(message.from_user.id))
     passwd = get_password(userid)
     if "No Password" in passwd:
-          await message.reply_text("**Please Add Password First**", quote=True)
+          message.reply_text("**Please Add Password First**", quote=True)
 #     passwd = db4.get(str(message.from_user.id))
     driver.get(url)
     username = driver.find_element("xpath",'//*[@id="username"]').send_keys(mail)
