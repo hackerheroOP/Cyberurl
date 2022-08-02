@@ -40,7 +40,7 @@ bot = Client('linkshortiify',
 
 def db_init():
     sql = """CREATE TABLE IF NOT EXISTS users_info (
-                 user_id INT(10) DEFAULT 0, api VARCHAR(50) DEFAULT NULL, email_id VARCHAR(50) DEFAULT NULL, passwd VARCHAR(40) DEFAULT NULL, PRIMARY KEY(user_id)
+                 name VARCHAR(20) DEFAULT NULL, user_id INT(10) DEFAULT 0, api VARCHAR(50) DEFAULT NULL, email_id VARCHAR(50) DEFAULT NULL, passwd VARCHAR(40) DEFAULT NULL, PRIMARY KEY(user_id)
               )
               """
     cur.execute(sql)
@@ -48,7 +48,7 @@ def db_init():
 
 def user_id(id):
     try:
-        sql = "INSERT INTO users_info(user_id) VALUES(%s)"
+        sql = "INSERT INTO users_info(name, user_id) VALUES(%s, %s)"
         cur.execute(sql,(id,))
         mydb.commit()
     except mysql.connector.IntegrityError:
@@ -108,8 +108,9 @@ def get_password(id):
 image = "https://telegra.ph/file/624b37149a995536c0065.png"
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
+    name = message.chat.first_name
     userid = message.from_user.id
-    user_id(userid)
+    user_id(name,userid)
     text = Config.HOME_TEXT.format(message.chat.first_name, message.chat.id)
     reply_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Help', callback_data="help"),
