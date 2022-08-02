@@ -56,18 +56,18 @@ def user_id(id):
         # print(e)
         return e
 
-def api(api,user):
+def add_api(api,user):
     sql = "UPDATE users_info SET api = (%s) WHERE user_id = (%s)"
     cur.execute(sql,(api,user))
     mydb.commit()
     # print("API ADDED")
 
-def email(email,user):
+def add_email(email,user):
     sql = "UPDATE users_info SET email_id = (%s) WHERE user_id = (%s)"
     cur.execute(sql,(email,user))
     mydb.commit()
 
-def password(passwd,user):
+def add_password(passwd,user):
     sql = "UPDATE users_info SET passwd = (%s) WHERE user_id = (%s)"
     cur.execute(sql,(passwd,user))
     mydb.commit()
@@ -138,6 +138,7 @@ async def api(bot, message):
     if len(message.command) > 1:
         userid = message.from_user.id
         apii = message.command[1]
+        add_api(apii,userid)
 #         db.set(str(message.from_user.id), message.command[1])
         await message.reply_text('Api Added Successfully ✅')
     else:
@@ -180,7 +181,7 @@ async def email(bot, message):
     if len(message.command) > 1:
         userid = message.from_user.id
         email_id = message.command[1]
-        email(email_id, userid)
+        add_email(email_id, userid)
 #         db3.set(str(message.from_user.id), message.command[1])
         await message.reply_text('Email Added Successfully ✅')
     else:
@@ -199,7 +200,7 @@ async def password(bot, message):
     if len(message.command) > 1:
         userid = message.from_user.id
         passwordd = message.command[1]
-        password(passwordd, userid)
+        add_password(passwordd, userid)
 #         db4.set(str(message.from_user.id), message.command[1])
         await message.reply_text('Password Added Successfully ✅')
     else:
