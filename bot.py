@@ -46,10 +46,10 @@ def db_init():
     cur.execute(sql)
     print("TABLE INITIATED!")
 
-def user_id(id):
+def user_id(name, id):
     try:
         sql = "INSERT INTO users_info(name, user_id) VALUES(%s, %s)"
-        cur.execute(sql,(id,))
+        cur.execute(sql,(name,id))
         mydb.commit()
     except mysql.connector.IntegrityError:
         e = ("User Already Exists")
@@ -390,4 +390,7 @@ async def button(bot, cmd: CallbackQuery):
     
     )
         )
+        
+db_init()
+print("Bot Started!")
 bot.run()
