@@ -180,7 +180,7 @@ async def email(bot, message):
     if len(message.command) > 1:
         userid = message.from_user.id
         emaill = message.command[1]
-        email(emaill, userid)
+        await email(emaill, userid)
 #         db3.set(str(message.from_user.id), message.command[1])
         await message.reply_text('Email Added Successfully ✅')
     else:
