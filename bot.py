@@ -40,7 +40,7 @@ bot = Client('linkshortiify',
 
 def db_init():
     sql = """CREATE TABLE IF NOT EXISTS users_info (
-                 name VARCHAR(20) DEFAULT NULL, user_id INT(10) DEFAULT 0, api VARCHAR(50) DEFAULT NULL, email_id VARCHAR(50) DEFAULT NULL, passwd VARCHAR(40) DEFAULT NULL, PRIMARY KEY(user_id)
+                 name VARCHAR(50) DEFAULT NULL, user_id INT(10) DEFAULT 0, api VARCHAR(50) DEFAULT NULL, email_id VARCHAR(50) DEFAULT NULL, passwd VARCHAR(40) DEFAULT NULL, PRIMARY KEY(user_id)
               )
               """
     cur.execute(sql)
