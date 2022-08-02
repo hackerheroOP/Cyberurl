@@ -179,8 +179,8 @@ async def short(bot, message):
 async def email(bot, message):
     if len(message.command) > 1:
         userid = message.from_user.id
-        emaill = message.command[1]
-        await email(emaill, userid)
+        email_id = message.command[1]
+        email(email_id, userid)
 #         db3.set(str(message.from_user.id), message.command[1])
         await message.reply_text('Email Added Successfully ✅')
     else:
