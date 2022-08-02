@@ -49,7 +49,7 @@ def db_init():
 def user_id(id):
     try:
         sql = "INSERT INTO users_info(user_id) VALUES(%s)"
-        cur.execute(sql,(id))
+        cur.execute(sql,(id,))
         mydb.commit()
     except mysql.connector.IntegrityError:
         e = ("User Already Exists")
@@ -108,7 +108,6 @@ def get_password(id):
 image = "https://telegra.ph/file/624b37149a995536c0065.png"
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
-    name = message.chat.first_name
     userid = message.from_user.id
     user_id(userid)
     text = Config.HOME_TEXT.format(message.chat.first_name, message.chat.id)
@@ -390,7 +389,4 @@ async def button(bot, cmd: CallbackQuery):
     
     )
         )
-        
-db_init()
-print("Bot Started!")
 bot.run()
