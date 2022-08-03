@@ -3,6 +3,7 @@ beautifulsoup4
 selenium
 pyrogram==1.2.5
 pickledb
+pymysql
 tgcrypto
 lxml
 mysql-connector-python
