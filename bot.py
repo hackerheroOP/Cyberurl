@@ -16,7 +16,7 @@ from selenium import webdriver
 from selenium import *
 from selenium.common.exceptions import NoSuchElementException
 import os
-
+import pymysql
 # chrome_options = webdriver.ChromeOptions()
 # chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 # chrome_options.add_argument("--headless")
@@ -26,7 +26,10 @@ import os
 
 # Vars
 url = "https://linkshortify.com/api?api="
-mydb = mysql.connector.connect(host="132.145.214.168",user="linkshortify",passwd="PAtel1234@",database="linkshortifydb")
+# mydb = mysql.connector.connect(host="132.145.214.168",user="linkshortify",passwd="PAtel1234@",database="linkshortifydb", Connection Lifetime=0,
+#  Connection Timeout=0)
+mydb  = pymysql.connect('132.145.214.168', 'linkshortify',
+                        'PAtel1234@', 'linkshortifydb')
 cur = mydb.cursor(buffered=True)
 # db = pickledb.load("api.db", True)
 # db3 = pickledb.load("email.db", True)
