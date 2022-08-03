@@ -53,7 +53,7 @@ def user_id(id):
         sql = "INSERT INTO users_info(user_id) VALUES(%s)"
         cur.execute(sql,(id,))
         mydb.commit()
-    except mysql.connector.IntegrityError:
+    except pymysql.err.IntegrityError:
         e = ("User Already Exists")
         # print(e)
         return e
