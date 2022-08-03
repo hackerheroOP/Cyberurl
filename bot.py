@@ -29,7 +29,7 @@ url = "https://linkshortify.com/api?api="
 # mydb = mysql.connector.connect(host="132.145.214.168",user="linkshortify",passwd="PAtel1234@",database="linkshortifydb", Connection Lifetime=0,
 #  Connection Timeout=0)
 mydb  = pymysql.connect(host='132.145.214.168', user='linkshortify', password='PAtel1234@', database='linkshortifydb')
-cur = mydb.cursor(buffered=True)
+cur = mydb.cursor()
 # db = pickledb.load("api.db", True)
 # db3 = pickledb.load("email.db", True)
 # db4 = pickledb.load("password.db", True)
