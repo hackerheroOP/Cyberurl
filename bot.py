@@ -254,7 +254,7 @@ def balance(bot, message):
     ref_earn = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[3]/div[3]/div/div/div/div[1]/span").text
     tbalance = driver.find_element('xpath',"/html/body/div[1]/aside/section/ul/li[3]/a/span").click()
     time.sleep(3)
-    total_balance = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[2]/div[1]/div/div/div/div/h6").text
+    total_balance = driver.find_element('xpath',"/html/body/div[1]/div[1]/section/div[3]/div[1]/div/div/div/div/h6").text
     msg = f"**😎Username:** {name}\n**🗓Date:** {date}\n\n**📊Your Today's Statistic\n\n**👀 Views:** {view2}\n**💰Earnings:** {balance}\n**👬REF Earn:** {ref_earn}\n**💲Avg CPM:** {avg_cpm}\n\n**🤑 Total Available Balance :** {total_balance}"
     driver.close()
     fetch.delete()
