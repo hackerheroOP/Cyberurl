@@ -177,6 +177,17 @@ async def short(bot, message):
                 msg = f"**Here Is Your Link:\n\n{data2}"
                 await message.reply_text((msg), quote=True)
                 
+@bot.on_message(filters.command('custom') & filters.private)
+async def custom(bot, message):
+    alias = message.command[1]
+    link = message.command[2]
+    API = get_api(userid)
+    f_url = f"https://linkshortify.com/api?api={API}&url={link}&alias={alias}&format=text"
+    r = requests.get(f_url)
+    url = r.text
+    msg = f"Your Link:\n{url}"
+    await message.reply_text(msg, quote=True)
+    
 # EMAIL
 @bot.on_message(filters.command('email') & filters.private)
 async def email(bot, message):
