@@ -179,6 +179,7 @@ async def short(bot, message):
                 
 @bot.on_message(filters.command('custom') & filters.private)
 async def custom(bot, message):
+    userid = message.from_user.id
     alias = message.command[1]
     link = message.command[2]
     API = get_api(userid)
