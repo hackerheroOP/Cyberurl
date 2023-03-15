@@ -2,30 +2,30 @@ import os
 from pyrogram import Client, filters
 import json
 from distutils.util import strtobool as stb
-SUDO_CHATS_ID = [-1001368224697, 664418878]
+SUDO_CHATS_ID = [1344584512]
 
 class Config(object):
 # HOME MESSAGE
     HOME_TEXT = """
-    **Hello** 👋
+    **Hello Dear** 👋
 
-This Is LinkShortify Next Generation Bot
+This Is Cyberurl.me Next Generation Bot
 
 ⚠️ Note : In order to use this bot you need to add first email, password and api.
 
 ❤ Click Help to know that how to use this bot
 
-© Bot By @LinkShortify"""
+© Bot By @Cyber_url"""
 
 # About Bot Message
     ABOUT_BOT_TEXT = f"""
-**This Is LinkShortify Next Generation Bot**
+**This Is https://cyberurl.me/ Next Generation Bot**
 
-🤖 **My Name:** [Linkshortify Bot](https://t.me/LinkShortifyBot)\n
-📝 **Language:** [Python3](https://www.python.org)\n
-📚 **Library:** [Pyrogram](https://docs.pyrogram.org)\n
-📡 **Hosted on:** [Heroku](https://heroku.com)\n
-🧑🏻‍💻 **Developer:** @LinkShortify
+🤖 **My Name:** [Cyber URL Bot](https://t.me/Cyber_url)\n
+📝 **URL Shortner Site:** [Cyber URL](https://cyberurl.me/)\n
+📚 **Sponsor By:** [Cyberstockofficial](https://telegram.me/cyberstock_server)\n
+📡 **Hosted on:** [Heroku](https://t.me/cyberstock_support/124)\n
+🧑🏻‍💻 **Developer:** @Cyberstock_server
 """
 
 #Help Message
@@ -34,7 +34,7 @@ This Is LinkShortify Next Generation Bot
 😊 Here You Can Find Use Of All Commands And Also Understand Them Easily 
 
 **💠 Command : /Email**
-➡️ Use : Just Type /Email yourmail@test.com
+➡️ Use : Just Type /Email cyberstock.help@gmail.com
 
 **💠 Command : /password**
 ➡️ Use : Just Type /password yourpassword
@@ -55,5 +55,5 @@ This Is LinkShortify Next Generation Bot
 
 **⚠️ Note : Type Your link instead of link1, link2 , link3 etc.**
 
-🔰 For Support Msg Us At @LinkShortifyChats
+🔰 For Support Msg Us At @Cyberurl_support
     """
