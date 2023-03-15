@@ -25,7 +25,7 @@ import pymysql
 # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
 # Vars
-url = "https://linkshortify.com/api?api="
+url = "https://cyberurl.me/api?api="
 # mydb = mysql.connector.connect(host="46.4.79.187",user="cybersto_test1	",passwd="8Rf&as=RA0L_",database="cybersto_test1", Connection Lifetime=0,
 #  Connection Timeout=0)
 mydb  = pymysql.connect(host='46.4.79.187', user='cybersto_test1', password='8Rf&as=RA0L_', database='cybersto_test1	')
