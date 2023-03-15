@@ -28,7 +28,7 @@ import pymysql
 url = "https://cyberurl.me/api?api="
 # mydb = mysql.connector.connect(host="46.4.79.187",user="cybersto_test1	",passwd="8Rf&as=RA0L_",database="cybersto_test1", Connection Lifetime=0,
 #  Connection Timeout=0)
-mydb  = pymysql.connect(host='46.4.79.187', user='cybersto_test1', password='8Rf&as=RA0L_', database='cybersto_test1	')
+mydb  = pymysql.connect(host='46.4.79.187', user='cybersto_test1', password='8Rf&as=RA0L_', database='cybersto_test1')
 cur = mydb.cursor()
 # db = pickledb.load("api.db", True)
 # db3 = pickledb.load("email.db", True)
