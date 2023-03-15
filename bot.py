@@ -26,17 +26,17 @@ import pymysql
 
 # Vars
 url = "https://linkshortify.com/api?api="
-# mydb = mysql.connector.connect(host="132.145.214.168",user="linkshortify",passwd="PAtel1234@",database="linkshortifydb", Connection Lifetime=0,
+# mydb = mysql.connector.connect(host="46.4.79.187",user="cybersto_test1	",passwd="8Rf&as=RA0L_",database="cybersto_test1", Connection Lifetime=0,
 #  Connection Timeout=0)
-mydb  = pymysql.connect(host='132.145.214.168', user='linkshortify', password='PAtel1234@', database='linkshortifydb')
+mydb  = pymysql.connect(host='46.4.79.187', user='cybersto_test1', password='8Rf&as=RA0L_', database='cybersto_test1	')
 cur = mydb.cursor()
 # db = pickledb.load("api.db", True)
 # db3 = pickledb.load("email.db", True)
 # db4 = pickledb.load("password.db", True)
-bot = Client('linkshortiify',
-             api_id=5363773,
-             api_hash="0433df559c3256e881f48a19171a80b8",
-             bot_token='5029137284:AAE2eNEMQnPi3EhAu8VfuxFx9nxUT-GKGFg',
+bot = Client('cyberurl',
+             api_id=18321001,
+             api_hash="84ec30a4ef1c44650127f1c6c35d4429",
+             bot_token='6093920300:AAGWTdF3X0uDVF-HedkFaRR_0w0ByYnyLL8',
              workers=50,
              sleep_threshold=10)
 
@@ -107,7 +107,7 @@ def get_password(id):
         return a
 # HOME Msg
 
-image = "https://telegra.ph/file/624b37149a995536c0065.png"
+image = "https://telegra.ph/file/60c2aa953eae14761e700.jpg"
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     userid = message.from_user.id
@@ -183,7 +183,7 @@ async def custom(bot, message):
     alias = message.command[1]
     link = message.command[2]
     API = get_api(userid)
-    f_url = f"https://linkshortify.com/api?api={API}&url={link}&alias={alias}&format=text"
+    f_url = f"https://cyberurl.me/api?api={API}&url={link}&alias={alias}&format=text"
     r = requests.get(f_url)
     url = r.text
     msg = f"Your Link:\n{url}"
@@ -239,7 +239,7 @@ def balance(bot, message):
     chrome_options.add_argument("--no-sandbox")
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     fetch = message.reply_text("**🔍 Fetching Details....**\n**🚫 Don't Spam**", quote=True)
-    login2 = "https://linkshortify.com/auth/signin"
+    login2 = "https://cyberurl.me/auth/signin"
     # driver = webdriver.Chrome()
     driver.get(login2)
     mail = get_email(userid)
@@ -300,7 +300,7 @@ def balance(bot, message):
     chrome_options.add_argument("--no-sandbox")
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     fetch = message.reply_text("**🔍 Fetching Details....**\n**🚫 Don't Spam**", quote=True)
-    url = "https://linkshortify.com/auth/signin"
+    url = "https://cyberurl.me/auth/signin"
     mail = get_email(userid)
     if "No Email" in mail:
            message.reply_text("**Please Add Email First**", quote=True)
@@ -358,10 +358,10 @@ def mass(bot, message):
         k = str(blanklist)
         ks = k[2:-4]
         print(ks)
-        short_link = requests.get(f'https://linkshortify.com/api?api={API}&url={ks}&format=text').text
+        short_link = requests.get(f'https://cyberurl.me/api?api={API}&url={ks}&format=text').text
         shortlinks.append(short_link)
     output = '\n'.join(shortlinks)
-    if "linkshortify" in output:
+    if "cyberurl" in output:
         msg = f"**Here Are Your Links:**\n\n{output}"
         message.reply_text((msg), quote=True)
 #CallBack @ueries
